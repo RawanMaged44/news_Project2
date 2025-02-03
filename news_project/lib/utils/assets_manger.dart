@@ -15,6 +15,11 @@ class AssetsManger{
   static const String businessLightImage = 'assets/images/businessLightImage.png';
   static const String entertainmentLightImage = 'assets/images/entertainmentLightImage.png';
   static const String sImage = 'assets/images/sImage.png';
+  static const String homeIcon = 'assets/images/homeIcon.png';
+  static const String themIcon = 'assets/images/themIcon.png';
+  static const String languageIcon = 'assets/images/langaugIcon.png';
+
+
 
 
 }

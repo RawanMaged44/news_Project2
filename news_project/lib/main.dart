@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:news_project/ui/home_screen/category_details/category_details.dart';
+import 'package:news_project/ui/home_screen/category_details/source_details.dart';
 import 'package:news_project/ui/home_screen/home_screen.dart';
 import 'package:news_project/utils/app_theme.dart';
 
