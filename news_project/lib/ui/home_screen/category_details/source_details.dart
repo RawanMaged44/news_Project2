@@ -19,18 +19,21 @@ class CategoryDetails extends StatefulWidget {
 class _CategoryDetailsState extends State<CategoryDetails> {
   SourceDetailsViewModel viewModel = SourceDetailsViewModel();
 
-  @override
-  void initState() {
-    // TODO: implement initState
-    super.initState();
-    viewModel.getSources(widget.category.id);
-  }
+  // @override
+  // void initState() {
+  //   // TODO: implement initState
+  //   super.initState();
+  //   WidgetsBinding.instance.addPostFrameCallback((_) {
+  //     viewModel.getSources(widget.category.id);
+  //   });
+  //   print('viewModel.sourceList : ${viewModel.sourcesList}');
+  // }
 
   @override
   Widget build(BuildContext context) {
     return ChangeNotifierProvider(
-      create: (context) => viewModel,
-      child: Consumer(
+      create: (context) => viewModel.getSources(widget.category.id),
+      child: Consumer<SourceDetailsViewModel>(
         builder: (context, value, child) {
           //todo : error
           if(viewModel.errorMessage !=null){
@@ -39,8 +42,7 @@ class _CategoryDetailsState extends State<CategoryDetails> {
                         Text(viewModel.errorMessage!),
                         ElevatedButton(
                             onPressed: () {
-                              ApiManager.getSources(widget.category.id);
-                              setState(() {});
+                              viewModel.getSources(widget.category.id);
                             },
                             child: const Text('Try again'))
                       ],

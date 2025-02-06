@@ -5,7 +5,7 @@ import 'package:news_project/utils/app_styles.dart';
 import 'package:toggle_switch/toggle_switch.dart';
 
 class CategoryFragment extends StatelessWidget {
-var categoriesList = CategoryModel.getCategoriesList();
+var categoriesList = CategoryModel.getCategoriesList(true );
 Function onViewAllClicked ;
 CategoryFragment ({required this.onViewAllClicked});
 

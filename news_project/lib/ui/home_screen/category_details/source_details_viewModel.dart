@@ -11,6 +11,10 @@ class SourceDetailsViewModel extends ChangeNotifier {
   String? errorMessage;
 
   void getSources(String categoryId) async {
+    // to rebuild screen when pressed on Try again
+    sourcesList = null;
+    errorMessage = null;
+    notifyListeners();
     try {
       var response = await ApiManager.getSources(categoryId);
       if (response?.status == 'error') {
